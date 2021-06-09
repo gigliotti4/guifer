@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str as Str;
+
 
 class Category extends Model
 {
@@ -23,7 +25,7 @@ class Category extends Model
     ];
 
     public function url() {
-        return "productos/categoria/" . str_slug($this->name) . "/" . $this->id;
+        return "productos/categoria/" . Str::slug($this->name) . "/" . $this->id;
     }
 
     public function productos()

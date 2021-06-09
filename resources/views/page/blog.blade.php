@@ -3,7 +3,7 @@
         <ol class="breadcrumb bg-transparent border-0 p-0">
             <li class="breadcrumb-item breadcrumb--home"><a href="{{ URL::to( '/' ) }}"><i class="fas fa-home"></i></a></li>
             <li class="breadcrumb-item"><a href="{{ URL::to( '/novedades' ) }}">Novedades</a></li>
-            <li class="breadcrumb-item"><a href="{{ URL::to( '/novedades/' . str_slug( $data[ 'blog' ]->categoria->title) . '/' . $data[ 'blog' ]->categoria->id ) }}">{{ $data[ 'blog' ]->categoria->title }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ URL::to( '/novedades' . Str::slug( $data[ 'blog' ]->categoria->title) . '/' . $data[ 'blog' ]->categoria->id ) }}">{{ $data[ 'blog' ]->categoria->title }}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ $data[ 'blog' ]->title }}</li>
         </ol>
         <div class="row mt-5">
@@ -37,7 +37,7 @@
                     <div>
                         @if( !empty( $data[ "previous" ] ) )
                         @php
-                        $url = 'novedad/' . str_slug( $data[ 'previous' ]->title );
+                        $url = 'novedad/' . Str::slug( $data[ 'previous' ]->title );
                         if(!empty($data[ 'previous' ]->date))
                             $url .= '__' . date( 'Y-m-d' , strtotime( $data[ 'previous' ]->date ) );
                         $url .= '/' . $data[ 'previous' ]->id
@@ -48,7 +48,7 @@
                     <div>
                         @if( !empty( $data[ "next" ] ) )
                         @php
-                        $url = 'novedad/' . str_slug( $data[ 'next' ]->title );
+                        $url = 'novedad/' . Str::slug( $data[ 'next' ]->title );
                         if(!empty($data[ 'next' ]->date))
                             $url .= '__' . date( 'Y-m-d' , strtotime( $data[ 'next' ]->date ) );
                         $url .= '/' . $data[ 'next' ]->id

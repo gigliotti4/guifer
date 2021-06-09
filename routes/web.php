@@ -20,15 +20,16 @@ Route::group(['middleware' => 'auth', 'prefix' => 'adm'], function() {
     Route::post('imagen', ['uses' => 'Auth\AdmController@imagenStore', 'as' => 'imagen.create']);
     Route::post('edit', ['uses' => 'Auth\AdmController@edit', 'as' => 'adm.edit']);
     Route::match(['get', 'post'], 'url',['as' => '.url','uses' => 'Auth\EmpresaController@url' ]);
-
+    
     Route::match(['get', 'post'], 'newsletter',['as' => 'newsletter.index','uses' => 'Auth\EmpresaController@newsletter' ]);
     Route::delete('newsletter/delete', ['uses' => 'Auth\EmpresaController@newsletterDestroy', 'as' => 'newsletter.delete']);
     /**
      * SLIDERS
      */
-    Route::resource('slider', 'Auth\SliderController')->except(['index','update','show']);
-    Route::get('slider/{seccion}', ['uses' => 'Auth\SliderController@index', 'as' => 'slider.index']);
-    Route::post('slider/update/{id}', ['uses' => 'Auth\SliderController@update', 'as' => 'slider.update']);
+     Route::resource('slider', 'Auth\SliderController')->except(['index', 'update','show']);
+     Route::get('slider/{seccion}', ['uses' => 'Auth\SliderController@index', 'as' => 'slider.index']);
+     Route::post('slider/update/{id}', ['uses' => 'Auth\SliderController@update', 'as' => 'slider.update']);
+    
     /**
      * CONTENIDO
      */

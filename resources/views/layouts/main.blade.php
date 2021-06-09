@@ -43,13 +43,13 @@
             <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header bg-light">
-                        <h5 class="modal-title">{{ $data[ "terminos" ]->contents[ "title" ] }}</h5>
+                        {{-- <h5 class="modal-title">{{ $data[ "terminos" ]->contents[ "title" ] }}</h5> --}}
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        {!! $data[ "terminos" ]->contents[ "text" ] !!}
+                        {{-- {!! $data[ "terminos" ]->contents[ "text" ] !!} --}}
                     </div>
                 </div>
             </div>

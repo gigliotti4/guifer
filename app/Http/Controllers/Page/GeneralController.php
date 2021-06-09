@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Page;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Str as Str;
 
 use App;
 use App\Contenido;
